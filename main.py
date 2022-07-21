@@ -61,7 +61,7 @@ while True:
                 state = STATE_YOU_WIN
             else:
                 for card in my_discard.cards:
-                    card.faceup = False
+                    card.face_up = False
                     cards.append(card)
                     card.move((my_deck.x, my_deck.y), SPEED)
                 my_discard.cards = []
@@ -69,7 +69,7 @@ while True:
                 next_states = [STATE_ADD_TO_MY_DECK, STATE_DEAL]
         elif len(your_deck.cards) == 0:
             for card in your_discard.cards:
-                card.faceup = False
+                card.face_up = False
                 cards.append(card)
                 card.move((your_deck.x, your_deck.y), SPEED)
             your_discard.cards = []
@@ -167,7 +167,7 @@ while True:
                     i += 1
             else:
                 for card in my_discard.cards:
-                    card.faceup = False
+                    card.face_up = False
                     cards.append(card)
                     card.move((my_deck.x, my_deck.y), SPEED)
                 my_discard.cards = []
@@ -190,7 +190,7 @@ while True:
                     i += 1
             else:
                 for card in your_discard.cards:
-                    card.faceup = False
+                    card.face_up = False
                     cards.append(card)
                     card.move((your_deck.x, your_deck.y), SPEED)
                 your_discard.cards = []

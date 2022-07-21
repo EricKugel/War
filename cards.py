@@ -83,4 +83,6 @@ class Card:
             if (math.hypot(self.x - self.target[0], self.y - self.target[1]) < 1):
                 self.target = None
                 return True
+        else:
+            return True
         return False

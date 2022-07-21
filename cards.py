@@ -62,6 +62,7 @@ class Card:
         self.x = None
         self.y = None
         self.target = None
+        self.in_play = False
         pygame.Surface.blit(self.image, CARD_IMAGES.subsurface(pygame.Rect((RANKS.index(self.rank) * CARD_WIDTH, SUITS.index(self.suit) * CARD_HEIGHT, CARD_WIDTH, CARD_HEIGHT))), (0, 0))
     def __str__(self):
         return self.rank + self.suit

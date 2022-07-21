@@ -87,17 +87,20 @@ while True:
     elif state == STATE_ADD_TO_MY_DECK:
         cards.reverse()
         for card in cards:
-            my_deck.add(card)
-            card.face_up = False
-        cards = []
+            # Do not judge >:(
+            if card.y not in [YOUR_PRIZE_SPACES[0][1], YOUR_SPACE[1], MY_SPACE[1], MY_PRIZE_SPACES[0][1]]:
+                my_deck.add(card)
+                card.face_up = False
+                cards.remove(card)
         my_deck.shuffle()
         state = next_states.pop(0)
     elif state == STATE_ADD_TO_YOUR_DECK:
         cards.reverse()
         for card in cards:
-            card.face_up = False
-            your_deck.add(card)
-        cards = []
+            if card.y not in [YOUR_PRIZE_SPACES[0][1], YOUR_SPACE[1], MY_SPACE[1], MY_PRIZE_SPACES[0][1]]:
+                your_deck.add(card)
+                card.face_up = False
+                cards.remove(card)
         your_deck.shuffle()
         state = STATE_DEAL
     elif state == STATE_I_WIN:

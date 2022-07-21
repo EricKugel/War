@@ -170,7 +170,7 @@ while True:
                     card.faceup = False
                     cards.append(card)
                     card.move((my_deck.x, my_deck.y), SPEED)
-                    my_discard.cards = []
+                my_discard.cards = []
                 state = STATE_MOVING
                 next_states = [STATE_ADD_TO_MY_DECK, STATE_WAR]
         elif len(your_deck.cards) < 3:
